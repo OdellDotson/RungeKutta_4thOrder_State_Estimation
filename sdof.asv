@@ -1,0 +1,27 @@
+function dx = sdof(x,u,t)
+m = 1;
+g = 9.81;
+l = 1;
+J_s = 0.2;
+J_a = 0.1;
+n = 10;
+b = 0.25;
+B_s = 0.01;
+B_a = 0.01;
+K_m = 1;
+K_w = 1;
+R = 1;
+L = 1;
+J = % fill this part;
+B = % fill this part;
+
+x1 = x(1,:);
+x2 = x(2,:);
+x3 = x(3,:);
+
+dx = [x2;...
+    1/J*(-m*g*l*sin(x1)-B*x2+n*K_m*x3);...
+    1/L*(-n*K_w*x2-R*x3+u)];
+
+end
+
